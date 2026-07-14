@@ -20,7 +20,3 @@ with Connection.open_serial_port("COM3") as connection:
         print(err)
     except MovementFailedException as err:
         print(err.detail.reason)
-    
-
-
-    
