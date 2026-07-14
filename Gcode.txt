@@ -1,0 +1,32 @@
+Supported Codes
+The translator supports a wide range of semi-standard G-Codes and M-Codes.
+G0 - traverse line
+G1 - line
+G2, G3 - arc, without support for parameters R and P
+G4 - dwell (P in seconds)
+G10 - set coordinate system (L2 only)
+G17, G18, G19 - plane selection
+G21 - millimeter system selection
+G28, G28.1 - return to home, set home to the current position
+G30, G30.1 - return to secondary home, set secondary home to the current position
+G53 - machine coordinate system
+G54-G59, G59.1-G59.3 - coordinate system selection
+G61, G61.1, G64 - path control mode
+G90, G91 - absolute/relative mode (G91 is default)
+G90.1, G91.1 - absolute/relative arc distance mode (G91.1 is default)
+G92, G92.1 - temporary work offset (not recommended)
+M2, M30 - program stop and end
+M64, M65 - set digital output
+M66 - wait on input (E not supported; L0,L1,L2 not supported; Q not supported; use M700 when possible)
+M68 - set analog output
+If you require support of some additional codes for your application, please let us know.
+Non-supported Codes
+There are some codes that we explicitly don't support at this moment.
+G20 - inch system selection
+G40, G41, G42 - tool radius compensation
+G43, G44, G49 - tool length compensation
+G93 - inverse time feed rate mode
+G95 - units per revolution feed rate mode
+Custom Codes
+Here you find all non-standard codes specific to our implementation.
+M700 - stream command passthrough
