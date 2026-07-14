@@ -1,5 +1,5 @@
 from zaber_motion import Units
-from zaber_motion.ascil import Connection
+from zaber_motion.ascii import Connection
 import time
 import math
 
