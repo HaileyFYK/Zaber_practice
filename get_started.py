@@ -13,7 +13,6 @@ with Connection.open_serial_port("COM3")as connection:
     if not axis.is_homed():
         axis.home()
 
-
     axis.move_absolute(Units.LENGTH_MILLIMETRES, 10)
 
     axis.move_relative(Units.LENGTH_MILLIMETRES, 5)
