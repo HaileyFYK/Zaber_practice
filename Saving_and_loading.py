@@ -28,3 +28,15 @@ assert device.settings.get('max_speed', MM_S) != initial_maxspeed
 # Load the previous state of the device
 load_state(device)
 assert device.settings.get('max_speed', MM_S) == initial_maxspeed
+
+#Peripheral State Propagation
+mcc4 = connection.get_device(1)
+mcc4.identify()
+
+peripheral_state = mcc4.get_axis(1).get_state()
+
+# Set the state to all of the other peripherals
+mcc4.get_axis(2).set_state(peripheral_state)
+mcc4.get_axis(3).set_state(peripheral_state)
+mcc4.get_axis(4).set_state(peripheral_state)
+
