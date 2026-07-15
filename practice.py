@@ -10,3 +10,6 @@ with Connection.open_serial_port("COM3") as connection:
 
     device = device_list[0]
     axis = device.get_axis(1)
+
+    if not axis.is_homed():
+        axis.home()
