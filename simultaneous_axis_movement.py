@@ -31,4 +31,9 @@ with Connection.open_serial_port("COM3") as connection:
 
     # from zaber_motion.ascii import Connection
     # from zaber_motion import Units, wait_all
-    
+    axis1_coroutine = axis1.move_absolute_async(3, Units.LENGTH_MILLIMETRES)
+    axis2_coroutine = axis2.move_absolute_async(4, Units.LENGTH_MILLIMETRES)
+    wait_all([axis1_coroutine, axis2_coroutine]) #Wait for both movements to complete
+    # Alternatively you can await the coroutines if you are in an async context:
+    # await asyncio.gather(axis1_coroutine, axis2_coroutine)
+
