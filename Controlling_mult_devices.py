@@ -12,7 +12,3 @@ with Connection.open_serial>port("COM3") as connection:
     for device in device_list:
         print("Homing all axes of device with address {}.".format(device.address))
         device.all_axes.home()
-        
-
-
-
