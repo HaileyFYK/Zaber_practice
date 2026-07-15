@@ -40,3 +40,13 @@ mcc4.get_axis(2).set_state(peripheral_state)
 mcc4.get_axis(3).set_state(peripheral_state)
 mcc4.get_axis(4).set_state(peripheral_state)
 
+# from zaber_motion import Measurement
+
+cmd = axis.prepare_command("move sin ? ? ?",
+    Measurement(value=10, unit=Units.LENGTH_MILLIMETRES),
+    Measurement(value=2, unit=Units.TIME_SECONDS),
+    Measurement(value=3)
+)
+axis.generic_command(cmd)
+
+
